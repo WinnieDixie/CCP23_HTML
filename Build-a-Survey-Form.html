@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylessheet" href="styles.css">
+<style>
+    #navbar {
+        color: #e4e4e4;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        background-color: #65009769;
+        width: 100vmax;
+        height: 3rem;
+        display: flex;
+        align-self: auto;
+    }
+
+    nav li {
+        display: inline;
+        margin-right: 20px;
+
+
+    }
+
+    nav ul {
+        margin: 10px;
+        text-align: left;
+        width: 100vmin;
+    }
+
+    :root {
+        --color-white: #f3f3f3;
+        --color-darkblue: #54087d;
+        --color-darkblue-alpha:
+            rgba(59, 2, 55, 0.8);
+        --color-green: #7405b1;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.4;
+        color: var(--color-white);
+        margin: 0;
+    }
+
+    /* mobile friendly alternative to using background-attachment: fixed */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        background: var(--color-darkblue);
+        background-image: linear-gradient(25deg,
+                rgba(58, 58, 158, 0.8),
+                rgba(206, 136, 205, 0.7));
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    h1 {
+        font-weight: 400;
+        line-height: 1.2;
+    }
+
+    p {
+        font-size: 1.125rem;
+    }
+
+    h1,
+    p {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    label {
+        display: flex;
+        align-items: center;
+        font-size: 1.125rem;
+        margin-bottom: 0.5rem;
+    }
+
+    input,
+    button,
+    select,
+    textarea {
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+
+    button {
+        border: none;
+    }
+
+    .container {
+        width: 100%;
+        margin: 3.125rem auto 0 auto;
+    }
+
+    @media (min-width: 576px) {
+        .container {
+            max-width: 540px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            max-width: 720px;
+        }
+    }
+
+    .header {
+        padding: 0 0.625rem;
+        margin-bottom: 1.875rem;
+    }
+
+    .description {
+        font-style: italic;
+        font-weight: 200;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+    }
+
+    .clue {
+        margin-left: 0.25rem;
+        font-size: 0.9rem;
+        color: #e4e4e4;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    /* form */
+
+    form {
+        background: var(--color-darkblue-alpha);
+        padding: 2.5rem 0.625rem;
+        border-radius: 0.25rem;
+    }
+
+    @media (min-width: 480px) {
+        form {
+            padding: 2.5rem;
+        }
+    }
+
+    .form-group {
+        margin: 0 auto 1.25rem auto;
+        padding: 0.25rem;
+    }
+
+    .form-control {
+        display: block;
+        width: 100%;
+        height: 2.375rem;
+        padding: 0.375rem 0.75rem;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .form-control:focus {
+        border-color: #80bdff;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    .input-radio,
+    .input-checkbox {
+        display: inline-block;
+        margin-right: 0.625rem;
+        min-height: 1.25rem;
+        min-width: 1.25rem;
+    }
+
+    .input-textarea {
+        min-height: 120px;
+        width: 100%;
+        padding: 0.625rem;
+        resize: vertical;
+    }
+
+    .submit-button {
+        display: block;
+        width: 100%;
+        padding: 0.75rem;
+        background: var(--color-green);
+        color: inherit;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <nav id="navbar">
+        <ul>
+            <li>
+                <a href="http://127.0.0.1:5500/Build-a-Tribute-Page.html">Tribute Page</a>
+            </li>
+            <li>
+                <a href="http://127.0.0.1:5500/Build-a-Survey-Form.html">Survey Form</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <header>
+            <h1 id="title">What's For Dinner Survery Form</h1>
+            <p id="description">Thank you for filling out this survey to help decide dinner.</p>
+        </header>
+        <form id="survey-form">
+            <div class="form-group">
+                <label id="name-label" for="name">Name</label>
+                <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label id="email-label" for="email">Enter your Email</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Enter Your Email"
+                    required>
+            </div>
+            <div class="form-group">
+                <label id="number-label" for="number">Rank <span class="clue">(optional)</span></label>
+                <input type="number" name="rank" id="number" min="1" max="5" class="form-control"
+                    placeholder="Select from 1 Best to 5 Worst">
+            </div>
+            <div class="form-group">
+                <p>What type of food?</p>
+                <select id="dropdown" name="type" class="form-control" required>
+                    <option disabled selected value>Select a type</option>
+                    <option value="chinese">Chinese</option>
+                    <option value="mexican">Mexican</option>
+                    <option value="italin">Italin</option>
+                    <option value="sushi">Sushi</option>
+                    <option value="american">American</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <p>Do you have a second choice?</p>
+                <label>
+                    <input name="choice" value="yes" type="radio" class="input-radio" checked>Yes</label>
+                <label>
+                    <input name="choice" value="no" type="radio" class="input-radio">No</label>
+                <label>
+                    <input name="choice" value="notsure" type="radio" class="input-radio">Not Sure</label>
+            </div>
+            <div class="form-group">
+                <p>What Second type of food?</p>
+                <select id="dropdown" name="type" class="form-control">
+                    <option disabled selected value>Select a type</option>
+                    <option value="chinese">Chinese</option>
+                    <option value="mexican">Mexican</option>
+                    <option value="italin">Italin</option>
+                    <option value="sushi">Sushi</option>
+                    <option value="american">American</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <p>Do any of these sound good? <span class="clue">(Check all that apply)</span></p>
+                <label>
+                    <input name="reset" value="kumos" type="checkbox" class="input-checkbox">
+                    Kumos
+                </label>
+                <label>
+                    <input name="reset" value="zaxby" type="checkbox" class="input-checkbox">
+                    Zaxby's
+                </label>
+                <label>
+                    <input name="reset" value="domino" type="checkbox" class="input-checkbox">
+                    Domino's
+                </label>
+                <label>
+                    <input name="reset" value="full-moon" type="checkbox" class="input-checkbox">
+                    Full Moon
+                </label>
+            </div>
+            <div class="form-group">
+                <p>Any comments or suggestions?</p>
+                <textarea id="comments" class="input-textarea" name="comment"
+                    placeholder="Enter your comment here..."></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" id="submit" class="submit-button"> Submit </button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
